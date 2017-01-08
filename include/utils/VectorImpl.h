@@ -106,6 +106,19 @@ protected:
     virtual void            do_move_forward(void* dest, const void* from, size_t num) const = 0;
     virtual void            do_move_backward(void* dest, const void* from, size_t num) const = 0;
     
+    
+#ifdef NEEDS_VECTORIMPL_SYMBOLS
+    // take care of FBC...
+    virtual void            reservedVectorImpl1();
+    virtual void            reservedVectorImpl2();
+    virtual void            reservedVectorImpl3();
+    virtual void            reservedVectorImpl4();
+    virtual void            reservedVectorImpl5();
+    virtual void            reservedVectorImpl6();
+    virtual void            reservedVectorImpl7();
+    virtual void            reservedVectorImpl8();
++#endif
+    
 private:
         void* _grow(size_t where, size_t amount);
         void  _shrink(size_t where, size_t amount);

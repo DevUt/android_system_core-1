@@ -168,7 +168,17 @@ public:
         
 protected:
     virtual int             do_compare(const void* lhs, const void* rhs) const = 0;
-
+#ifdef NEEDS_VECTORIMPL_SYMBOLS
+    // take care of FBC...
+    virtual void            reservedSortedVectorImpl1();
+    virtual void            reservedSortedVectorImpl2();
+    virtual void            reservedSortedVectorImpl3();
+    virtual void            reservedSortedVectorImpl4();
+    virtual void            reservedSortedVectorImpl5();
+    virtual void            reservedSortedVectorImpl6();
+    virtual void            reservedSortedVectorImpl7();
+    virtual void            reservedSortedVectorImpl8();
+#endif
 private:
             ssize_t         _indexOrderOf(const void* item, size_t* order = 0) const;
 
